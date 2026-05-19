@@ -1,0 +1,31 @@
+function calculateGrade() {
+    let name = document.getElementById("name").value;
+    let roll = document.getElementById("roll").value;
+    let marks = parseInt(document.getElementById("marks").value);
+
+    if (name === "" || roll === "" || isNaN(marks)) {
+        document.getElementById("result").innerHTML =
+            "Please fill all fields.";
+        return;
+    }
+
+    let grade;
+
+    if (marks >= 90) {
+        grade = "A+";
+    } else if (marks >= 80) {
+        grade = "A";
+    } else if (marks >= 70) {
+        grade = "B";
+    } else if (marks >= 60) {
+        grade = "C";
+    } else {
+        grade = "Fail";
+    }
+
+    document.getElementById("result").innerHTML =
+        "Name: " + name + "<br>" +
+        "Roll Number: " + roll + "<br>" +
+        "Marks: " + marks + "<br>" +
+        "Grade: " + grade;
+}
